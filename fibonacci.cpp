@@ -1,22 +1,23 @@
 #include <iostream>
 using namespace std;
 
+int fibonacci(int n) {
+    if (n == 0)
+        return 0;       // Base case 1
+    else if (n == 1)
+        return 1;       // Base case 2
+    else
+        return fibonacci(n - 1) + fibonacci(n - 2); // Recursive call
+}
+
 int main() {
     int n;
-    cout << "Enter how many terms you want: ";
+    cout << "Enter number of terms: ";
     cin >> n;
 
-    int a = 0, b = 1, next;
-
     cout << "Fibonacci Series: ";
-
-    for (int i = 1; i <= n; i++) {
-        cout << a << " ";     // print current term
-        next = a + b;         // calculate next term
-        a = b;                // move forward
-        b = next;
+    for (int i = 0; i < n; i++) {
+        cout << fibonacci(i) << " ";
     }
-
-    cout << endl;
     return 0;
 }
