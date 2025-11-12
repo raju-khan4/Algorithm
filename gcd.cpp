@@ -9,7 +9,7 @@ int gcd(int a, int b) {
         int r=a%b;
         a=b;
         b=r;
-        gcd(a,b);
+    return gcd(a,b);
     }
 }
 
